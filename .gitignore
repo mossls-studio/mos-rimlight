@@ -1,0 +1,8 @@
+target/
+helper/target/
+dist/
+tests/out/
+*.log
+*.pam
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+[package]
+name = "effectcraft-helper-mos-rimlight"
+version = "1.0.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "EffectCraft external helper providing mos_打光 / mos_rimlight (2D offset rim light with tile matte, base exposure, under-glow B&W/gradient overlay, and fast bloom glow)"
+
+[[bin]]
+name = "effectcraft-helper-mos-rimlight"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+itoa = "=1.0.18"
+memchr = "=2.8.3"
+zmij = "=1.0.23"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
