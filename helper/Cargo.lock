@@ -3,8 +3,8 @@
 version = 4
 
 [[package]]
-name = "effectcraft-helper-mos-lightsweep"
-version = "1.2.0"
+name = "effectcraft-helper-mos-rimlight"
+version = "1.0.0"
 dependencies = [
  "itoa",
  "memchr",

@@ -1,0 +1,116 @@
+{
+  "category": {
+    "zh": "MOS 视效",
+    "en": "MOS VFX"
+  },
+  "name": {
+    "zh": "mos_打光",
+    "en": "mos_rimlight"
+  },
+  "description": {
+    "zh": "传统 2D 偏移边缘打光插件：通过镜像拼贴偏移遮罩提取受光边缘（杜绝画面边界穿帮），支持原图层曝光压暗、发光层之下叠加黑白渐变或四色渐变、边缘高光曝光提亮，以及高速独立发光开关。",
+    "en": "Classic 2D offset rim light effect: extracts lit edges with a tiled offset alpha matte (preventing frame-edge leaks), base layer exposure, under-glow B&W or 4-color gradient overlay, rim exposure/tint, and fast padded glow switch."
+  },
+  "groups": {
+    "遮罩与拼贴": { "zh": "遮罩与拼贴", "en": "Matte & Tiling" },
+    "手动偏移": { "zh": "手动偏移", "en": "Manual Offset" },
+    "原图层曝光": { "zh": "原图层曝光", "en": "Base Exposure" },
+    "边缘光色彩": { "zh": "边缘光色彩", "en": "Rim Light Color" },
+    "中层渐变叠加": { "zh": "中层渐变叠加", "en": "Under-Glow Gradient" },
+    "黑白渐变": { "zh": "黑白渐变", "en": "B&W Gradient" },
+    "四色渐变": { "zh": "四色渐变", "en": "4-Color Gradient" },
+    "发光": { "zh": "发光", "en": "Glow" },
+    "发光参数": { "zh": "发光参数", "en": "Glow Settings" },
+    "发光颜色": { "zh": "发光颜色", "en": "Glow Tint" },
+    "输出": { "zh": "输出", "en": "Output" }
+  },
+  "params": {
+    "light_angle": { "name": { "zh": "光照角度", "en": "Light Angle" } },
+    "edge_distance": { "name": { "zh": "边缘厚度 px", "en": "Edge Distance px" } },
+    "rim_exposure": { "name": { "zh": "边缘曝光 (EV)", "en": "Rim Exposure (EV)" } },
+    "base_exposure": { "name": { "zh": "原图层曝光 (EV)", "en": "Base Exposure (EV)" } },
+
+    "tile_mode": {
+      "name": { "zh": "拼贴模式", "en": "Tile Mode" },
+      "options": {
+        "zh": ["镜像边缘 (Mirror)", "边缘延展 (Clamp)", "平铺重复 (Repeat)", "关闭拼贴 (None)"],
+        "en": ["Mirror Edges", "Clamp Edges", "Repeat Tile", "None"]
+      }
+    },
+    "offset_mode": {
+      "name": { "zh": "偏移方式", "en": "Offset Mode" },
+      "options": {
+        "zh": ["角度 + 距离", "手动 X / Y 偏移"],
+        "en": ["Angle + Distance", "Manual X / Y Offset"]
+      }
+    },
+    "offset_x": { "name": { "zh": "遮罩 X 偏移 px", "en": "Matte Offset X px" } },
+    "offset_y": { "name": { "zh": "遮罩 Y 偏移 px", "en": "Matte Offset Y px" } },
+    "mask_scale": { "name": { "zh": "遮罩缩放 %", "en": "Matte Scale %" } },
+    "mask_feather": { "name": { "zh": "遮罩羽化 px", "en": "Matte Feather px" } },
+    "mask_choke": { "name": { "zh": "遮罩收缩 %", "en": "Matte Choke %" } },
+
+    "base_offset": { "name": { "zh": "原图层偏移", "en": "Base Offset" } },
+    "base_gamma": { "name": { "zh": "原图层伽马", "en": "Base Gamma" } },
+
+    "rim_gamma": { "name": { "zh": "边缘伽马", "en": "Rim Gamma" } },
+    "rim_tint_mix": { "name": { "zh": "边缘染色 %", "en": "Rim Tint Mix %" } },
+    "rim_color": { "name": { "zh": "边缘颜色", "en": "Rim Color" } },
+    "rim_opacity": { "name": { "zh": "边缘不透明度 %", "en": "Rim Opacity %" } },
+
+    "overlay_enable": { "name": { "zh": "启用渐变叠加", "en": "Enable Gradient Overlay" } },
+    "overlay_type": {
+      "name": { "zh": "渐变类型", "en": "Gradient Type" },
+      "options": {
+        "zh": ["黑白渐变", "四色渐变"],
+        "en": ["B&W Gradient", "4-Color Gradient"]
+      }
+    },
+    "overlay_blend": {
+      "name": { "zh": "混合模式", "en": "Blend Mode" },
+      "options": {
+        "zh": ["叠加 (Overlay)", "柔光 (Soft Light)", "正片叠底 (Multiply)", "滤色 (Screen)", "正常 (Normal)"],
+        "en": ["Overlay", "Soft Light", "Multiply", "Screen", "Normal"]
+      }
+    },
+    "overlay_opacity": { "name": { "zh": "不透明度 %", "en": "Opacity %" } },
+
+    "bw_start": { "name": { "zh": "起点位置 (亮)", "en": "Start Point (Light)" } },
+    "bw_end": { "name": { "zh": "终点位置 (暗)", "en": "End Point (Dark)" } },
+    "bw_shape": {
+      "name": { "zh": "渐变形状", "en": "Ramp Shape" },
+      "options": {
+        "zh": ["线性渐变", "径向渐变"],
+        "en": ["Linear Ramp", "Radial Ramp"]
+      }
+    },
+    "bw_invert": { "name": { "zh": "反转黑白", "en": "Invert B&W" } },
+
+    "c4_p1": { "name": { "zh": "点 1 位置", "en": "Point 1" } },
+    "c4_col1": { "name": { "zh": "颜色 1", "en": "Color 1" } },
+    "c4_p2": { "name": { "zh": "点 2 位置", "en": "Point 2" } },
+    "c4_col2": { "name": { "zh": "颜色 2", "en": "Color 2" } },
+    "c4_p3": { "name": { "zh": "点 3 位置", "en": "Point 3" } },
+    "c4_col3": { "name": { "zh": "颜色 3", "en": "Color 3" } },
+    "c4_p4": { "name": { "zh": "点 4 位置", "en": "Point 4" } },
+    "c4_col4": { "name": { "zh": "颜色 4", "en": "Color 4" } },
+    "c4_blend": { "name": { "zh": "融合平滑度 %", "en": "Blend Smoothness %" } },
+
+    "glow_enable": { "name": { "zh": "发光开关", "en": "Enable Glow" } },
+    "glow_threshold": { "name": { "zh": "发光阈值 %", "en": "Glow Threshold %" } },
+    "glow_radius": { "name": { "zh": "发光半径 px", "en": "Glow Radius px" } },
+    "glow_intensity": { "name": { "zh": "发光强度 %", "en": "Glow Intensity %" } },
+    "glow_outside": { "name": { "zh": "溢出到透明区", "en": "Overflow Outside Alpha" } },
+    "glow_tint_mix": { "name": { "zh": "光晕染色 %", "en": "Glow Tint Mix %" } },
+    "glow_color": { "name": { "zh": "发光颜色", "en": "Glow Color" } },
+
+    "output_mode": {
+      "name": { "zh": "输出模式", "en": "Output Mode" },
+      "options": {
+        "zh": ["合成结果", "仅边缘光与发光", "预览偏移遮罩"],
+        "en": ["Composite", "Rim & Glow Only", "Preview Offset Matte"]
+      }
+    },
+    "mix": { "name": { "zh": "总体混合 %", "en": "Mix %" } }
+  }
+}
